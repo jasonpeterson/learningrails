@@ -1,0 +1,21 @@
+<h1>Entries#sign_in</h1>
+<p>Find me in app/views/entries/sign_in.html.erb</p>
+
+<%= form_tag action: 'sign_in' do %>
+    <p>Enter your name: 
+    <%= text_field_tag 'visitor_name', @name %></p>
+    
+    <%= submit_tag 'Sign in' %>
+<% end %>
+
+<p>Previous visitors:</p>
+<ul>
+    <% @entries.each do |entry| %>
+        <li><%= entry.name %></li>
+    <% end %>
+</ul>
+
+
+<p>Debug stuff:</p>
+<%= debug(params) %>
+<!-- other debug options: assigns, params, base_path, controller, flash, request, response, session -->
